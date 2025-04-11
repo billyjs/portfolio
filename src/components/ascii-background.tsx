@@ -141,7 +141,7 @@ export function AsciiBackground({ messages }: { messages: HiddenMessage[] }) {
         cancelAnimationFrame(animationFrameRef.current);
       }
     };
-  }, []);
+  }, [messages]);
 
   // Handle mouse movement with throttling
   useEffect(() => {

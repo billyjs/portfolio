@@ -83,7 +83,7 @@ export function Terminal({ secret }: { secret: string }) {
               </div>
             ))}
             <p className="mt-3 text-gray-400">
-              Type 'project [name]' for more details about a specific project.
+              Type &apos;project [name]&apos; for more details about a specific project.
             </p>
           </div>
         );
@@ -369,7 +369,7 @@ export function Terminal({ secret }: { secret: string }) {
             Last login: Thu Apr 10 12:00:00 2025 from 127.0.0.1
           </p>
           <p className="text-gray-400 mt-1">
-            Type 'help' to see available commands.
+            Type &apos;help&apos; to see available commands.
           </p>
         </div>
       ),
@@ -416,6 +416,7 @@ export function Terminal({ secret }: { secret: string }) {
           const result = await command.action(commandArgs);
           newHistoryItem.output = result;
         } catch (error) {
+          console.error(error);
           newHistoryItem.output = (
             <p className="text-red-500">
               An error occurred while executing the command.
@@ -425,7 +426,7 @@ export function Terminal({ secret }: { secret: string }) {
       } else {
         newHistoryItem.output = (
           <p className="text-red-500">
-            Command not found: {commandName}. Type 'help' to see available
+            Command not found: {commandName}. Type &apos;help&apos; to see available
             commands.
           </p>
         );
